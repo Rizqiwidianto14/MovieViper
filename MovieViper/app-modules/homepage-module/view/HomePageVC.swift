@@ -9,9 +9,12 @@ import UIKit
 
 class HomePageVC: UIViewController {
     @IBOutlet weak var homePageCollectionView: UICollectionView!
+    var presentor: ViewToPresenterHomePageProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presentor?.startFetchingMovies()
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +30,18 @@ extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCell", for: indexPath) as! HomePageCell
         return cell
+    }
+    
+    
+}
+
+extension HomePageVC: PresenterToViewHomePageProtocol{
+    func onMovieResponseSuccess(movieModelArrayList: Array<ListModel>) {
+        print("test")
+    }
+    
+    func onMovieResponseFailed(error: String) {
+        print("test")
     }
     
     

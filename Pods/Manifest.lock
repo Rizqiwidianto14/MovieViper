@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (5.2.2)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya-ObjectMapper (2.9):
+    - Moya-ObjectMapper/Core (= 2.9)
+  - Moya-ObjectMapper/Core (2.9):
+    - Moya (~> 14.0.0-beta.6)
+    - ObjectMapper
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - ObjectMapper (4.2.0)
+  - SDWebImage (5.10.0):
+    - SDWebImage/Core (= 5.10.0)
+  - SDWebImage/Core (5.10.0)
+
+DEPENDENCIES:
+  - Moya-ObjectMapper
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
+    - Moya-ObjectMapper
+    - ObjectMapper
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Moya-ObjectMapper: 967a99d9ea3aa9c93ddbe112aeca3667f53bfe93
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+
+PODFILE CHECKSUM: 1a3e777f8c00a9e39a697b13433d2a46d9aa4a12
+
+COCOAPODS: 1.11.2
