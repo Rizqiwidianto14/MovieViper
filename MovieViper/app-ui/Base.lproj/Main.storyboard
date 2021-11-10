@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CVu-Ez-v4l">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home PageVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomePageVC" customModule="MovieViper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BfB-D3-Mc8">
+                                <rect key="frame" x="5" y="88" width="404" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="80" minimumInteritemSpacing="10" id="7Oc-oH-8Cu">
+                                    <size key="itemSize" width="185" height="285"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomePageCell" id="nNO-kM-Nm5" customClass="HomePageCell" customModule="MovieViper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="285"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="03H-tS-cYJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="285"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fight club png" translatesAutoresizingMaskIntoConstraints="NO" id="Bhq-hh-XLx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Bhq-hh-XLx" secondAttribute="height" multiplier="1:1" id="2Xc-wr-yFx"/>
+                                                        <constraint firstAttribute="height" constant="185" id="Hra-qt-tKM"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fight Club" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-OM-LAS">
+                                                    <rect key="frame" x="5" y="190" width="175" height="95"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bhq-hh-XLx" firstAttribute="top" secondItem="03H-tS-cYJ" secondAttribute="top" id="EOq-Iu-Ngn"/>
+                                                <constraint firstItem="NEs-OM-LAS" firstAttribute="top" secondItem="Bhq-hh-XLx" secondAttribute="bottom" constant="5" id="Qei-Vd-Ep2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bhq-hh-XLx" secondAttribute="trailing" id="Tyq-To-Zd2"/>
+                                                <constraint firstAttribute="trailing" secondItem="NEs-OM-LAS" secondAttribute="trailing" constant="5" id="cPf-dZ-642"/>
+                                                <constraint firstItem="Bhq-hh-XLx" firstAttribute="leading" secondItem="03H-tS-cYJ" secondAttribute="leading" id="rCY-qj-sug"/>
+                                                <constraint firstAttribute="bottom" secondItem="NEs-OM-LAS" secondAttribute="bottom" id="v52-1K-Heu"/>
+                                                <constraint firstItem="NEs-OM-LAS" firstAttribute="leading" secondItem="03H-tS-cYJ" secondAttribute="leading" constant="5" id="vvK-fJ-OYL"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="185" height="285"/>
+                                        <connections>
+                                            <outlet property="homePageImage" destination="Bhq-hh-XLx" id="Cp3-ge-aI6"/>
+                                            <outlet property="homePageTitle" destination="NEs-OM-LAS" id="vMZ-B7-LZe"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="XH0-0k-e0T"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UEN-jy-NNX"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BfB-D3-Mc8" secondAttribute="bottom" id="0wW-8q-VLq"/>
+                            <constraint firstItem="BfB-D3-Mc8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hzm-k3-oID"/>
+                            <constraint firstItem="BfB-D3-Mc8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="pnQ-DA-Tkf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BfB-D3-Mc8" secondAttribute="trailing" constant="5" id="uCQ-Zj-eaV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hge-jf-ExT"/>
+                    <connections>
+                        <outlet property="homePageCollectionView" destination="BfB-D3-Mc8" id="L5P-Y5-hLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="97.767857142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="j5n-l3-msH">
+            <objects>
+                <viewController id="7ls-aA-sro" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="14X-fi-Nsv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="l52-GH-hlJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zf2-iO-xC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1938" y="98"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DAZ-P5-DfB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CVu-Ez-v4l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZBm-5o-a0U">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cZ7-JY-NDL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CTV-Lj-NAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.652173913043484" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fight club png" width="500" height="750"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
