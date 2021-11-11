@@ -29,10 +29,11 @@ class HomePageInteractor: Network, PresenterToInteractorHomePageProtocol{
                 do{
                     
                     let results = try response.mapArray(ListModel.self, atKeyPath: "results")
-                    
                     completion(results)
-                    print(results)
-                    
+                    if results.count > 1 {
+                        print(results[0].title)
+                    }
+ 
                 } catch let error {
                     let err = error as NSError
                     onFailed?(err.domain)

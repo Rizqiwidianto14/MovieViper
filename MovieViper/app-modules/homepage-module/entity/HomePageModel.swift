@@ -14,19 +14,6 @@ private let POSTER = "poster_path"
 private let TITLE = "title"
 
 class ListModel: Mappable{
-    internal var results: ResultModel?
-    
-    required init?(map: Map) {
-        mapping(map: map)
-    }
-    
-    func mapping(map: Map) {
-        results <- map[RESULTS]
-    }
-    
-}
-
-class ResultModel: Mappable{
     internal var posterImage: String?
     internal var title: String?
     
@@ -38,7 +25,6 @@ class ResultModel: Mappable{
         posterImage <- map[POSTER]
         title <- map[TITLE]
     }
-    
     
 }
 
