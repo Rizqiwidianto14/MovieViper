@@ -6,29 +6,33 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomePageVC: UIViewController {
     @IBOutlet weak var homePageCollectionView: UICollectionView!
     var presentor: ViewToPresenterHomePageProtocol?
+    var movieList: Array<ListModel> = Array()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presentor?.startFetchingMovies()
-        // Do any additional setup after loading the view.
+        
     }
 
-
+    
 }
 
 
 extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        print("counted")
+        return movieList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCell", for: indexPath) as! HomePageCell
+        cell.homePageTitle.text = movieList[indexPath.row].title
         return cell
     }
     
@@ -36,14 +40,27 @@ extension HomePageVC: UICollectionViewDelegate, UICollectionViewDataSource{
 }
 
 extension HomePageVC: PresenterToViewHomePageProtocol{
-    func onMovieResponseSuccess(movieModelArrayList: Array<ListModel>) {
-        print("test")
-    }
-    
+
     func onMovieResponseFailed(error: String) {
-        print("test")
+        let alert = UIAlertController(title: "Alert", message: "Problem Fetching Notice", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
+
+    func onMovieResponseSuccess(movieModelArrayList: Array<ListModel>) {
+            self.movieList = movieModelArrayList
+        self.homePageCollectionView.reloadData()
+
+
+    }
     
-}
+ 
+
+    }
+
+
+    
+    
+
 

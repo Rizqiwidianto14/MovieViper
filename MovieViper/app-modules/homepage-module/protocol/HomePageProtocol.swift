@@ -21,7 +21,7 @@ protocol PresenterToViewHomePageProtocol: AnyObject{
 
 protocol PresenterToInteractorHomePageProtocol: AnyObject{
     var presenter: InteractorToPresenterHomePageProtocol? {get set}
-    func fetchMovie(page: Int, completion: @escaping([ListModel]) -> (), onFailed:((String) -> Void)?)
+    func fetchMovie(page: Int,completion: @escaping([ListModel]) -> (),onFailed:((String) -> Void)?)
 }
 
 protocol PresenterToRouterHomePageProtocol: AnyObject{

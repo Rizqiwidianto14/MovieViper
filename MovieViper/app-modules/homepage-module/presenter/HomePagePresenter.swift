@@ -12,26 +12,28 @@ class HomePagePresenter: ViewToPresenterHomePageProtocol{
 
     var view: PresenterToViewHomePageProtocol?
     
+    var movieList: Array<ListModel> = Array()
+    
     var interactor: PresenterToInteractorHomePageProtocol?
     
     var router: PresenterToRouterHomePageProtocol?
     
     func startFetchingMovies() {
-        
         interactor?.fetchMovie(page: 1, completion: { (result) in
-            if result.count > 0{
-                print(result)
+            DispatchQueue.main.async {
+                self.movieList = result
             }
+            
         }, onFailed: { (error) in
-            print(error)
         })
+        
     }
     
 }
 
 extension HomePagePresenter: InteractorToPresenterHomePageProtocol{
     func movieFetchSuccess(movieList: Array<ListModel>) {
-        view?.onMovieResponseSuccess(movieModelArrayList: movieList)
+        self.view?.onMovieResponseSuccess(movieModelArrayList: movieList)
     }
     
     func movieFetchFailed() {

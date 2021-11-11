@@ -15,39 +15,43 @@ protocol Network{
 }
 
 class HomePageInteractor: Network, PresenterToInteractorHomePageProtocol{
+ 
+
     var presenter: InteractorToPresenterHomePageProtocol?
     let provider = MoyaProvider<MoyaRepository>()
     static let MovieAPIKey = "40ddaf11b2dceca49d91ea17022d894c"
     
-    func fetchMovie(page: Int, completion: @escaping([ListModel]) -> (), onFailed:((String) -> Void)?) {
+    func fetchMovie(page: Int, completion: @escaping ([ListModel]) -> (),onFailed: ((String) -> Void)?) {
         provider.request(.homePage(page: page)) { result in
             switch result{
                 
-                
             case let .success(response):
-                
                 do{
-                    
+                  
                     let results = try response.mapArray(ListModel.self, atKeyPath: "results")
-                    completion(results)
-                    if results.count > 1 {
-                        print(results[0].title)
-                    }
+                    self.presenter?.movieFetchSuccess(movieList: results)
+                    
+                    
+                    
  
                 } catch let error {
                     let err = error as NSError
+                    self.presenter?.movieFetchFailed()
                     onFailed?(err.domain)
                     
                 }
             case let .failure(error):
-      
                 let err = error as NSError
+                self.presenter?.movieFetchFailed()
                 onFailed?(err.domain)
+
                 
             }
             
         }
     }
+    
+    
         
 
     }

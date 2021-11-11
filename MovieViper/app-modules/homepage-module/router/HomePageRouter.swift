@@ -13,7 +13,6 @@ class HomePageRouter: PresenterToRouterHomePageProtocol{
     
     static func createHomePageModule() -> HomePageVC {
         
-        
         let view = mainstoryboard.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageVC
         let presenter: ViewToPresenterHomePageProtocol & InteractorToPresenterHomePageProtocol = HomePagePresenter()
         let interactor: PresenterToInteractorHomePageProtocol = HomePageInteractor()
